@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/atm.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction List</h1>
+        <ul>
+            {% for transaction in transactions %}
+                <li>{{ transaction.transaction_type }} of ${{ transaction.amount }} on {{ transaction.timestamp }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'transaction_create' %}">Create a new transaction</a>
+    </div>
+</body>
+</html>

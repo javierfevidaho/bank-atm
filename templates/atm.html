@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Interface</title>
+    <link rel="stylesheet" href="{% static 'css/atm.css' %}">
+</head>
+<body>
+    <div class="atm-screen">
+        <h2>Welcome to CyberBank ATM</h2>
+        <form method="POST" action="{% url 'atm_login' %}">
+            {% csrf_token %}
+            <label for="account">Account Number:</label>
+            <input type="text" id="account" name="account">
+            <label for="pin">PIN:</label>
+            <input type="password" id="pin" name="pin">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
