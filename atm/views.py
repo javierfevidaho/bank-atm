@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Transaction
 from .forms import TransactionForm
+from django.shortcuts import render
+
+def atm_interface(request):
+    return render(request, 'atm_interface.html')
 
 def transaction_list(request):
     transactions = Transaction.objects.all()
